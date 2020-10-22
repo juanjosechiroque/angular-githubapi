@@ -1,16 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { ListCommits } from "./components/list-commits/list-commits.component";
 
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations: [    
+    ListCommits
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ListCommits]
 })
 export class AppModule { }
