@@ -1,0 +1,42 @@
+<div class="container">
+
+  <div class="row">
+    
+    <div class="col">
+      
+      <h1>Commit History</h1>
+      
+      <h4>Repository</h4>
+      
+      <p>
+        <a href="https://github.com/juanjosechiroque/angular-githubapi" target="_blank" class="stretched-link">juanjosechiroque/angular-githubapi</a>
+      </p>      
+      
+      <p> Total: {{ listCommits.length }}</p>
+      
+      <table class="table table-sm table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Nro</th>
+            <th scope="col">Commit</th>
+            <th scope="col">Message</th>
+            <th scope="col">Author</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>           
+          <tr *ngFor="let item of listCommits; let idx=index">       
+            <td>{{ idx+1 }}</td>
+            <td>{{ item.sha | slice:0:7 }}</td>
+            <td>{{ item.commit.message }}</td>
+            <td><a href="{{item.author.html_url}}" target="_blank">{{ item.author.login }}</a></td>
+            <td>{{ item.commit.author.date  | date: "dd/MM/yyyy HH:mm" }}</td>         
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>  
+  
+  </div>
+
+</div>
